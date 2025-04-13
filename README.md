@@ -24,7 +24,7 @@ Mathematically, this is a **Quadratic Unconstrained Binary Optimization (QUBO)**
 
 ---
 
-## ⚛Quantum Solution (Alpha-VQE)
+## Quantum Solution (Alpha-VQE)
 
 We model the QUBO as an **Ising Hamiltonian**:
 
