@@ -34,7 +34,7 @@ We model the QUBO as an **Ising Hamiltonian**:
 
 - Aanya Bhandari
 - Roman Tudor
-- X
-- X
+- Felix Caron
+- Victor Rochon
 - X
 
