@@ -36,5 +36,5 @@ We model the QUBO as an **Ising Hamiltonian**:
 - Roman Tudor
 - Felix Caron
 - Victor Rochon
-- Jacopo X
+- Jacopo Dardini
 
