@@ -2,7 +2,7 @@
 
 # Quantum Insurance Portfolio Optimization (Alpha-VQE)
 
-This project uses **Alpha-VQE**, a hybrid quantum-classical variational algorithm, to optimize an insurance portfolio by selecting a subset of properties that:
+This project uses **VQE**, a hybrid quantum-classical variational algorithm, to optimize an insurance portfolio by selecting a subset of properties that:
 
 - Maximize return
 - Minimize correlation-based risk
@@ -24,7 +24,7 @@ Mathematically, this is a **Quadratic Unconstrained Binary Optimization (QUBO)**
 
 ---
 
-## Quantum Solution (Alpha-VQE)
+## Quantum Solution (VQE)
 
 We model the QUBO as an **Ising Hamiltonian**:
 
