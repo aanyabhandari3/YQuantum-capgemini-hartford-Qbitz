@@ -1,37 +1,53 @@
 # YQuantum-capgemini-hartford-Qbitz
 
-# Quantum Insurance Portfolio Optimization (Alpha-VQE)
+# QEdge Portfolio (VQE)
+## Inspiration
+Insurance companies like The Hartford manage portfolios of insured properties where correlated risks (e.g., from natural disasters) can lead to major losses. We were inspired to explore how **quantum computing**, particularly **Variational Quantum Eigensolver (VQE)**, can help optimize such portfolios for lower total risk while maintaining high return.
 
-This project uses **VQE**, a hybrid quantum-classical variational algorithm, to optimize an insurance portfolio by selecting a subset of properties that:
+## What it does
+QEdge Portfolios selects the optimal subset of properties (out of many) by:
+- Minimizing total correlation risk (from a correlation matrix)
+- Maximizing expected return
+- Enforcing a strict budget (select exactly B properties)
 
-- Maximize return
-- Minimize correlation-based risk
-- Respect a strict budget constraint
+The system compares three solutions:
+- Random selection
+- Classical solver (CVXPY)
+- Quantum-enhanced selection using VQE
 
-The approach is benchmarked against both **random selection** and a **classical solver**, demonstrating quantum-enhanced performance in complex decision spaces relevant to real-world insurance operations.
+## How we built it
+- Formulated the problem as a **QUBO** (Quadratic Unconstrained Binary Optimization)
+- Converted to **Ising Hamiltonian** for quantum evaluation
+- Implemented VQE with **PennyLane** and a parametrized quantum circuit
+- Benchmarked against classical solutions using **CVXPY**
+- Visualized energy convergence, portfolio choices, and comparative performance
 
----
+## Challenges we ran into
+- CVXPY solver compatibility required tuning and fallbacks
+- Mapping QUBO to Ising with penalties required care to enforce the budget
+- Quantum circuit design needed to balance expressive power and convergence stability
+- Interpreting quantum measurement results into actionable portfolio decisions
 
-## Problem Context
+## Accomplishments that we're proud of
+- Developed a full quantum-classical pipeline to solve a real business problem
+- Achieved measurable improvement over both random and classical baselines
+- Demonstrated the feasibility of running VQE on practical insurance data
+- Created a reusable framework scalable to IBM Q or Braket
 
-Insurance companies like **The Hartford** must construct property portfolios that:
+## What we learned
+- VQE is a powerful hybrid method even on today’s NISQ devices
+- Penalty methods can enforce hard constraints in quantum optimization
+- Classical post-processing is key to interpreting quantum results
+- Domain-specific quantum optimization is already valuable
 
-- Avoid **correlated risk exposure** (e.g., properties in the same flood zone)
-- Maximize **expected returns** from premiums
-- Select exactly **B properties** within capital or regulatory limits
-
-Mathematically, this is a **Quadratic Unconstrained Binary Optimization (QUBO)** problem, which is NP-hard and becomes intractable for large portfolios using classical solvers.
-
----
-
-## Quantum Solution (VQE)
-
-We model the QUBO as an **Ising Hamiltonian**:
-
----
+## What's next for QEdge Portfolios
+- Scale the model to 50+ properties
+- Add real-world insurance data from The Hartford
+- Introduce ESG and exposure constraints
+- Deploy to real quantum backends (IBM Q, Rigetti, Braket)
+- Create a front-end interface for actuaries to interact with quantum optimization results
 
 ## Authors
-
 - Aanya Bhandari
 - Roman Tudor
 - Felix Caron
